@@ -1,11 +1,10 @@
 /**
- * @description url 뒤에 붙는 파라미터들을 동적으로 오브젝트나 배열로 만들어서 리턴해주는 함수.
+ * @description url 뒤에 붙는 query를 파싱하여 동적으로 오브젝트나 배열로 만들어서 리턴해주는 함수이다.
  * @param {*} url
  */
-export const getAllUrlParams = function(url) {
+export const parseAllQueryString = function(url) {
     // url (선택 사항) 또는 window에서 쿼리 문자열 가져옴.
-    let queryString =
-      process.server || url ? url.split("?")[1] : window.location.search.slice(1);
+    let queryString = process.server || url ? url.split("?")[1] : window.location.search.slice(1);
     queryString = decodeURIComponent(queryString);
   
     let obj = {};
