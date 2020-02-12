@@ -1,7 +1,7 @@
 # JS-Module
 
 ## QueryStringHelper
->  URL에 Query들을 파싱하여 오브젝트나 배열로 편리하게 관리하기 위해 제작함.  
+>  URL 요청 Query들을 파싱하여 오브젝트나 배열로 편리하게 다루기 위해 개발함. 
 
 #  
 
