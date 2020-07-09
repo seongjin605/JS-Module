@@ -6,6 +6,8 @@
   "author": "preciouStar <seongjin605@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
+    "array-sort": "^1.0.0",
+    "axios": "^0.19.2",
     "query-string": "^6.12.1"
   }
 }
