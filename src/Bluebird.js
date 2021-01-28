@@ -19,6 +19,7 @@ const start = () => {
     },
     { concurrency: 4 }
   );
+  console.log('끝');
   const endDateTime = new Date().getTime();
   console.log((endDateTime - startDateTime) / 1000 + '초');
 };
