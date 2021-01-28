@@ -11,15 +11,37 @@ const start = () => {
   //     await sleep(1000);
   //     console.log(i);
   //   }
-  Promise.map(
+
+  //   Promise.map(
+  //     arr,
+  //     async (item, index) => {
+  //       await sleep(1000);
+  //       console.log('item:', item);
+  //     },
+  //     { concurrency: 4 }
+  //   );
+
+  const result = Promise.filter(
     arr,
     async (item, index) => {
-      await sleep(1000);
-      console.log('item:', item);
+      if (item === 'jung') {
+        await sleep(1000);
+        console.log('item:', item);
+        return item;
+      }
+      return null;
     },
     { concurrency: 4 }
   );
-  console.log('끝');
+
+  result
+    .then(r => {
+      console.log('r:', r);
+    })
+    .catch(err => {
+      console.error(err);
+    });
+
   const endDateTime = new Date().getTime();
   console.log((endDateTime - startDateTime) / 1000 + '초');
 };
