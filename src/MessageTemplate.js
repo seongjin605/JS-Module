@@ -1,5 +1,6 @@
 const createMessageTemplate = () => {
-  const str = '{tail}, {KK}, {namu}';
+  const str = '{tail}|{KK}|{namu}';
+
   let messageTemplate = `
   What is Lorem Ipsum?
   Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -8,23 +9,27 @@ const createMessageTemplate = () => {
   It has survived not only five centuries, {KK} but also the leap into electronic typesetting, remaining essentially unchanged. 
   It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
   and more recently with desktop publishing {namu} software like Aldus PageMaker including versions of Lorem Ipsum.|
-  DO YOUR BEST.
+  DO YOUR BEST. 💪 |
+  HEY WASSUP MAN 😀|
   `;
-  const params = str.split(',');
-  const templates = messageTemplate.split('|');
+  const params = str.split('|');
+  const messageOptions = messageTemplate.split('|');
+  console.log('------------------------------------------------------------');
+  console.log('messageOptions length:', messageOptions.length);
+  console.log('🚀  0번째 인덱스가 기준:', messageOptions[0]);
+  console.log('🚀  1번째 인덱스 옵션:', messageOptions[1]);
+  console.log('🚀  1번째 인덱스 옵션:', messageOptions[2]);
+  console.log('------------------------------------------------------------');
 
-  let message = '';
+  const result = [];
+  while (params.length > 0) {
+    const param = params.pop().trim();
+    messageOptions[0] = messageOptions[0].replace(param, '🔥');
+  }
 
-  templates.forEach(val => {
-    const target = val.trim();
-    while (params.length > 0) {
-      const param = params.pop();
-      console.log(param);
-      message = target.replace(param.trim(), '🔥');
-    }
-  });
-  console.log('result:', message);
-  return message;
+  result.push(messageOptions[0], messageOptions[2]);
+
+  return result.join('');
 };
 
-console.log(createMessageTemplate());
+console.log('result:', createMessageTemplate());
