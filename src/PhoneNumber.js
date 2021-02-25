@@ -15,3 +15,12 @@ function phoneNumberFormat(phoneNumber) {
   // phoneNumber가 number type이면, replace 호출시 not function 에러가 발생하므로 문자열로 변환해서 error 방지
   return ('' + phoneNumber).replace(/(^02.{0}|^01.{1}|[0-9]{3})([0-9]+)([0-9]{4})/, '$1-$2-$3');
 }
+
+console.log(phoneNumberFormat('01000000000'));
+console.log(phoneNumberFormat('01011112222'));
+console.log(phoneNumberFormat('0101111222'));
+console.log(phoneNumberFormat('010-3333-4444'));
+
+console.log(phoneNumberFormat('010-333-4444'));
+console.log(phoneNumberFormat('011-211-7290'));
+console.log(phoneNumberFormat(null));
