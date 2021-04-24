@@ -7,20 +7,6 @@ const sleep = t => {
 const start = () => {
   const startDateTime = new Date().getTime();
   const arr = ['park', 'kim', 'lee', 'choe', 'jung'];
-  //   for (let i = 0; i < arr.length; i++) {
-  //     await sleep(1000);
-  //     console.log(i);
-  //   }
-
-  //   Promise.map(
-  //     arr,
-  //     async (item, index) => {
-  //       await sleep(1000);
-  //       console.log('item:', item);
-  //     },
-  //     { concurrency: 4 }
-  //   );
-
   const result = Promise.filter(
     arr,
     async (item, index) => {
